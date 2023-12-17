@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.display-none {
+    display: none;
+}
+
+.pendente {
+    background-color: #aa0101;
+    color: #fff;
+}
+
+.task-complete {
+    background-color: #1d6800;
+    color: #fff;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 60%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    border: 1px solid #000;
+
+}
+
+.todo-menu {
+    border-right: 1px solid #000;
+    padding: 1.3rem;
+}
+
+
+.header {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.formulario {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#todo-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario .form-control {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.20rem;
+    margin-bottom: 1rem;
+    height: 3.125rem;
+}
+
+.formulario .form-control label {
+    font-size: 18px;
+}
+
+.formulario .form-control input {
+    flex: 1;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 0.5rem;
+
+    background-color: rgb(241, 238, 238);
+
+}
+
+.formulario .form-control input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+
+}
+
+
+.formulario .form-control-textarea {
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.20rem;
+    margin-bottom: 1rem;
+}
+
+.formulario .form-control-textarea label {
+    font-size: 18px;
+}
+
+.formulario .form-control-textarea textarea {
+    width: 100%;
+    flex: 1;
+    font-size: 17px;
+    border-radius: 5px;
+    background-color: rgb(241, 238, 238);
+    resize: none;
+    border: none;
+    padding: 0.5rem;
+}
+
+.formulario .form-control-textarea textarea:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.btn-salvar {
+    padding: 0.3rem;
+    width: 3.125rem;
+    align-self: flex-end;
+
+    background-color: #fff;
+    color: #405082;
+    border: 1px solid #405082;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease-in 0.3s;
+}
+
+.btn-salvar:hover {
+    border: #405082 solid 1px;
+    background-color: #405082;
+    color: #fff;
+}
+
+.btn-salvar i {
+    font-size: 17px;
+}
+
+.search-filter-task {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.594rem;
+    column-gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.search-filter-task .pesquisa {
+    width: 12.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.5rem;
+}
+
+.search-filter-task .pesquisa button,
+input {
+    height: 100%;
+}
+
+.search-filter-task .pesquisa input {
+    flex: 1;
+    padding-left: 0.5rem;
+}
+
+.search-filter-task .pesquisa button {
+    padding: 0.2rem;
+    background-color: #fff;
+    color: #405082;
+    border: 1px solid #405082;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease-in 0.3s;
+}
+
+.search-filter-task .pesquisa button:hover {
+    border: #405082 solid 1px;
+    background-color: #405082;
+    color: #fff;
+}
+
+.search-filter-task .pesquisa input {
+    border-radius: 5px;
+    border: none;
+    padding-left: 0.5rem;
+    background-color: rgb(241, 238, 238);
+}
+
+.search-filter-task .pesquisa input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.search-filter-task .filtrar {
+    height: 100%;
+    width: 9.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 17px;
+}
+
+
+.search-filter-task .filtrar select {
+    height: 100%;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+.search-filter-task .filtrar select:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.task-cards-container h2 {
+    text-align: center;
+}
+
+.task-list {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.task-list th {
+    padding: 0.2rem;
+    border-bottom: #000 solid 1px;
+}
+
+
+.task-list tr td {
+    padding: 0.2rem;
+    font-size: 12px;
+}
+
+.task-list tr td:nth-child(1) {
+    text-align: center;
+}
+
+.task-list tr td:nth-child(2) {
+    text-align: justify;
+    width: 21.25rem;
+}
+
+.task-list tr td:nth-child(3) {
+    width: 8rem;
+    text-align: left;
+    font-size: 10px;
+}
+
+.task-list tr td:nth-child(4) {
+    width: 5.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 3px;
+}
+
+
+.btn-task {
+    padding: 0.17rem;
+    background-color: #fff;
+    color: #405082;
+    border: 1px solid #405082;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: ease-in 0.3s;
+}
+
+.btn-task:hover {
+    border: #405082 solid 1px;
+    background-color: #405082;
+    color: #fff;
+}
+
+
+.task-complete td:nth-child(2) {
+    text-decoration: line-through;
+}
+
+.task-complete tr td:nth-child(4) {
+    justify-content: space-around;
+}
+
+/*Card de exibição*/
+.todo-details {
+    padding: 1.3rem;
+    display: flex;
+    justify-content: center;
+}
+
+task-card {
+    width: 100%;
+}
+
+
+.detail-container {
+    width: 100%;
+}
+
+.btn-close-container {
+    margin-bottom: 1rem;
+}
+
+.header-detail {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+}
+
+.header-detail h2 {
+    font-size: 18px;
+    text-align: left;
+    flex: 1;
+    align-self: baseline;
+    padding-left: 0.5rem;
+}
+
+.header-detail .id-task {
+    align-self: baseline;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.header-detail .task-status {
+    align-self: self-end;
+    font-weight: bold;
+    padding: 0.2rem;
+}
+
+
+.section-detail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.detail-data {
+    display: flex;
+    column-gap: 0.3rem;
+    align-items: center;
+}
+
+.detail-data .data-label {
+    font-weight: bold;
+}
+
+.detail-data .data-value {
+    font-size: 14px;
+}
+
+.task-detail {
+    width: 100%;
+    height: 18.75rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-detail p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.task-detail textarea {
+    flex: 1;
+    font-size: 17px;
+    border-radius: 5px;
+    background-color: rgb(241, 238, 238);
+    resize: none;
+    border: none;
+    padding: 0.5rem;
+}
+
+.task-detail textarea:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+/*formulario de atualização*/
+.update-container {
+	width: 100%;
+}
+
+.update-container header {
+	height: 5rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.update-container h2 {
+	margin-bottom: 2rem;
+}
+
+.update-container header span {
+	align-self: self-end;
+}
+
+#update-form {
+	width: 100%;
+}
+
+.id-task-update {
+	display: block;
+	margin-bottom: 1rem;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.title-input-control {
+	display: flex;
+	flex-direction: column;
+	row-gap: 0.2rem;
+	margin-bottom: 1rem;
+	height: 3.125rem;
+}
+
+.title-input-control, .description-input-control label {
+	font-size: 18px;
+}
+
+.title-input-control input {
+	flex: 1;
+	font-size: 17px;
+	border-radius: 5px;
+	border: none;
+	padding-left: 0.5rem;
+
+	background-color: rgb(241, 238, 238);
+}
+
+.title-input-control input:focus {
+	box-shadow: 0 0 0 0;
+	outline: 0;
+}
+
+.description-input-control {
+	width: 100%;
+	height: 10rem;
+	display: flex;
+	flex-direction: column;
+	row-gap: 0.2rem;
+	margin-bottom: 1rem;
+}
+
+.description-input-control textarea {
+	resize: none;
+	flex: 1;
+	font-size: 17px;
+	border-radius: 5px;
+	border: none;
+	padding: 0.5rem;
+	background-color: rgb(241, 238, 238);
+}
+
+.description-input-control textarea:focus {
+	box-shadow: 0 0 0 0;
+	outline: 0;
+}
+
+.btn-container {
+	width: 100%;
+	display: flex;
+	align-self: center;
+
+	justify-content: space-between;
+}
+
+.btn-reOpen {
+	padding: 0.3rem;
+	background-color: #fff;
+	color: #405082;
+	border: 1px solid #405082;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: ease-in 0.3s;
+}
+
+.btn-reOpen:hover {
+	border: #405082 solid 1px;
+	background-color: #405082;
+	color: #fff;
+}
+
+.separator {
+	flex: 1;
+}
+
+.status-update {
+	font-weight: bold;
+	padding: 0.2rem;
+}
+
+

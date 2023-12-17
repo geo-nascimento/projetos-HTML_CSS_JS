@@ -63,7 +63,7 @@ html {
   text-transform: uppercase;
   font-weight: 500;
   transition: all 0.25s ease-in;
-border-bottom: 4px solid transparent;
+  border-bottom: 4px solid transparent;
 }
 
 .nav-bar .list-menu li a:hover {

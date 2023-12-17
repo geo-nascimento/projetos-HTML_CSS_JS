@@ -1,0 +1,14 @@
+{
+  "name": "agendatodo",
+  "version": "1.0.0",
+  "description": "Projeto de agenda de tarefas",
+  "main": "main.js",
+  "scripts": {
+    "run": "npx json-server --watch db.json"
+  },
+  "author": "George Nascimento",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "^0.17.4"
+  }
+}
